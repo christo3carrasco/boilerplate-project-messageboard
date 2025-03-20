@@ -8,7 +8,12 @@ const apiRoutes         = require('./routes/api.js');
 const fccTestingRoutes  = require('./routes/fcctesting.js');
 const runner            = require('./test-runner');
 
+const connectDB = require('./db.js');
+
 const app = express();
+
+// Conectar a la base de datos
+connectDB();
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
